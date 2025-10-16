@@ -1,8 +1,18 @@
-# AstroNvim Template
+# Neovim Configuration
 
 **NOTE:** This is for AstroNvim v5+
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+This is my personal Neovim configuration built on top of [AstroNvim](https://github.com/AstroNvim/AstroNvim), a feature-rich and aesthetic Neovim configuration framework.
+
+## Prerequisites
+
+- Neovim >= 0.9.5
+- Git
+- A Nerd Font (optional, but recommended for icons)
+- ripgrep (for Telescope fuzzy finding)
+- lazygit (optional, for git integration via toggleterm)
+- Node.js (for some LSP servers)
+- Python 3 (for some plugins)
 
 ## 🛠️ Installation
 
@@ -15,16 +25,10 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
-#### Create a new user repository from this template
-
-Press the "Use this template" button above to create a new repository to store your user configuration.
-
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
-
 #### Clone the repository
 
 ```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+git clone https://github.com/stonecharioteer/nvim-config ~/.config/nvim
 ```
 
 #### Start Neovim
@@ -32,3 +36,56 @@ git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```shell
 nvim
 ```
+
+AstroNvim will automatically install all plugins on first launch. This may take a few minutes.
+
+## ✨ Features
+
+This configuration includes:
+
+- **Language Server Protocol (LSP)**: Configured for Ruby development with ruby-lsp
+- **Mason**: Tool installer for LSP servers, linters, and formatters
+- **Toggleterm**: Terminal integration with custom terminals for:
+  - Lazygit (git TUI)
+  - Python REPL
+  - Node REPL
+  - Htop
+- **Custom keybindings**: See the plugin configurations for details
+
+## 🔧 Key Customizations
+
+- Ruby LSP configured to use mise-managed ruby-lsp installation
+- Mason configured to exclude ruby_lsp from auto-installation
+- Rubocop LSP disabled (ruby-lsp handles linting)
+- Toggleterm with floating terminal as default
+
+## 💻 Development Tools
+
+The configuration is optimized for Ruby development but supports multiple languages through Mason's LSP installer.
+
+## ⌨️ Keybindings
+
+### Terminal (Toggleterm)
+
+- `<C-\>`: Toggle terminal
+- `<leader>tf`: Toggle floating terminal
+- `<leader>th`: Toggle horizontal terminal
+- `<leader>tv`: Toggle vertical terminal
+- `<leader>gg`: Open Lazygit
+- `<leader>tp`: Open Python REPL
+- `<leader>tn`: Open Node REPL
+- `<leader>tH`: Open Htop
+
+For more keybindings, refer to the [AstroNvim documentation](https://docs.astronvim.com/).
+
+## 🔄 Updating
+
+To update AstroNvim and plugins:
+
+```vim
+:AstroUpdate
+```
+
+## 📝 License
+
+This configuration is provided as-is for personal use.
