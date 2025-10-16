@@ -1,9 +1,17 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Mason
 
 ---@type LazySpec
 return {
+  -- use mason-lspconfig to configure Mason
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      -- Prevent Mason from auto-installing ruby-lsp (use mise version instead)
+      automatic_installation = {
+        exclude = { "ruby_lsp" },
+      },
+    },
+  },
   -- use mason-tool-installer for automatically installing Mason packages
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
