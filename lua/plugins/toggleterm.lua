@@ -33,7 +33,7 @@ return {
       border = "curved", -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
       width = math.floor(vim.o.columns * 0.8),
       height = math.floor(vim.o.lines * 0.8),
-      winblend = 3,
+      winblend = 20, -- 0 = fully opaque, 100 = fully transparent (20 = 80% opaque)
       zindex = 50,
     },
     winbar = {

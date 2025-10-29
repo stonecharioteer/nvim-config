@@ -43,8 +43,18 @@ AstroNvim will automatically install all plugins on first launch. This may take 
 
 This configuration includes:
 
-- **Language Server Protocol (LSP)**: Configured for Ruby development with ruby-lsp
-- **Mason**: Tool installer for LSP servers, linters, and formatters
+- **Language Server Protocol (LSP)**: Multi-language support with LSP servers for:
+  - Ruby (ruby-lsp via mise)
+  - Python (pyright)
+  - Rust (rust-analyzer)
+  - Go (gopls)
+  - Lua (lua-language-server)
+  - Bash (bash-language-server)
+  - Docker (dockerfile-language-server)
+  - Markdown (marksman)
+- **Mason**: Automatic installation of LSP servers, linters, and formatters
+- **Treesitter**: Syntax highlighting for multiple languages including code blocks in markdown
+- **nvim-surround**: Text object manipulation for surrounding delimiters
 - **Toggleterm**: Terminal integration with custom terminals for:
   - Lazygit (git TUI)
   - Python REPL
@@ -55,13 +65,16 @@ This configuration includes:
 ## 🔧 Key Customizations
 
 - Ruby LSP configured to use mise-managed ruby-lsp installation
-- Mason configured to exclude ruby_lsp from auto-installation
+- Ruby auto-formatting with `bundle exec rubocop -a` on save
+- Markdown auto-formatting with Prettier on save
+- Mason configured to exclude ruby_lsp from auto-installation (uses mise version)
 - Rubocop LSP disabled (ruby-lsp handles linting)
 - Toggleterm with floating terminal as default
+- Line wrapping enabled by default (requires activating astrocore.lua)
 
 ## 💻 Development Tools
 
-The configuration is optimized for Ruby development but supports multiple languages through Mason's LSP installer.
+The configuration supports multiple programming languages with automatic LSP server installation through Mason. Special configurations exist for Ruby development using mise-managed tooling.
 
 ## ⌨️ Keybindings
 

@@ -19,16 +19,23 @@ return {
     opts = {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
-        -- install language servers
-        "lua-language-server",
+        -- Language servers (LSPs)
+        "lua-language-server",  -- Lua
+        "pyright",              -- Python
+        "rust-analyzer",        -- Rust
+        "gopls",                -- Go
+        "bash-language-server", -- Bash
+        "dockerfile-language-server", -- Docker
+        "marksman",             -- Markdown
 
-        -- install formatters
-        "stylua",
+        -- Formatters
+        "stylua",               -- Lua formatter
+        "prettier",             -- Markdown, JSON, YAML formatter
 
-        -- install debuggers
-        "debugpy",
+        -- Debuggers
+        "debugpy",              -- Python debugger
 
-        -- install any other package
+        -- Other tools
         "tree-sitter-cli",
       },
     },
